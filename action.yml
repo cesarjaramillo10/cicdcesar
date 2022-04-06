@@ -1,0 +1,19 @@
+name: "saludo de cesar"
+description: "esto hace que cesar te salude desde ga"
+
+inputs:
+  nombre:
+    description: "nombre al cual saludar"
+    required: true
+    default: 'pepe'
+
+
+outputs:
+  saludo:
+    description: "saludo completo"
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.nombre }}
